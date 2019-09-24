@@ -1377,6 +1377,10 @@ cf. 안드로이드 앱 life cycle → superclass 의 메소드를 override 해�
     				public abstract void checkNetworkConnection(); 
     }
 
+MainActivity 가 AppCompatActivity를 상속받은 BaseActivity를 상속받도록 바꿔준다. 
+
+이제 BaseActivity를 상속받은 액티비티 클래스들에서 네트워크 연결을 확인하는 메소드를 간편하게 이용할 수 있다. 
+
     public class MainActivity extends BaseActivity{
     		
     		//onCreate 함수 Override 생략 
