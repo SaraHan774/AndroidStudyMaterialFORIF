@@ -1,8 +1,11 @@
-﻿# 3 - Inheritance, Abstract class, Interface 
+﻿# 3 - Inheritance, Abstract class, Interface, Collections Framework
+ 2019-10-01 Tuesday
 
 ## Polymorphism 
 자바에서 다형성이란 '여러가지 Type을 가질 수 있는 능력'이다. 
 상속의 경우, Super class 타입의 참조변수(Reference Variable)로 Subclass 인스턴스를 참조할 수 있도록 하는 것. 
+
+- [Wikidocs Java -  다형성](https://wikidocs.net/269)
 
 ## Inheritance 
 상속이란, 기존의 클래스를 재사용하려 새로운 클래스를 작성하는 것이다. 상속을 통해서 클래스를 작성하면 보다 적은 양의 코드로 새로운 클래스를 작성할 수 있고, 코드를 공통적으로 관리할 수 있기 때문에 코드의 추가 및 변경이 매우 용이하다. 
@@ -57,7 +60,9 @@ public static void main(String [] args){
 ```
 
 - 다만 `상속은 subclass 의 기능을 확장한다` 는 말에 비추어 보았을때 조상 클래스로부터 물려받은 속성들을 아무런 수정 없이 그대로 가져다 쓰는 것은 약간 아쉬울 수 있다. 
+
 - 이럴 때 사용하는 것이 `@Override` 키워드에도 나타나 있듯, `오버라이딩` 이라는 것이다. 
+
 - `CaptionTelevision` 클래스에 아래의 메소드를 추가해주면 super class 로부터 물려받은 메소드의 기능이 확장된다. 
 	- 전원을 단순히 키고 끄는 것 만이 아닌, 사용자에게 재생 상태를 저장할 것인지 묻는 대화상자를 띄울 수 있다. 
 
@@ -75,8 +80,11 @@ public static void main(String [] args){
 ```
 
 - 그렇다면 다형성이란 특징이 상속에서 어떻게 나타나는 것일까? 
+
 - `CaptionTelevision` 클래스와 `Television` 을 집합 관계로 나타내면 CaptionTelevision 이 Television을 포함하는 관계임을 알 수 있다. CaptionTelevition은 Television에서 물려받은 속성 + 자신이 따로 구현한 속성도 있기 때문이다. 
+
 - 따라서 CaptionTelevition 객체를 만들 때 속성을 Television으로 지정해 주는 것이 가능해진다. 
+
 - Because Caption TV `is a`  TV ! 
 
 ```
@@ -104,9 +112,13 @@ public class MainActivity extends AppCompatActivity{
 ```
 
 - onCreate(Bundle)는 프로그램 시작 시 가장 먼저 실행되는 메소드이다. 
+
 - Java 프로그램의 main 메소드와 같은 역할을 한다. 
+
 - AppCompatActivity 로부터 기본적으로 어플리케이션이 갖추어야 할 속성들을 상속받는다. 
+
 - 개발자는 상속받은 속성들 위에서 본인의 앱에 맞는 기능들을 구현하는 것이다. 
+
 - 굳이 비유하자면 아예 맨손으로 시작하는 것이 아니라 주어진 스케치북과 색연필로 색칠을 하는 것. 
 
 
@@ -130,6 +142,7 @@ class Buyer{
 ```
 
 class Buyer를 좀 더 자세히 구현한다고 했을 때 다음과 같은 메소드가 있을 수 있다. 
+
 ```
 class Buyer{
 	int money = 1000; 
@@ -188,8 +201,11 @@ public static void main(String [] args){
 ## Abstract class 
 
 - class 를 설계도라고 한다면, Abstract class (추상 클래스)는 미완성 설계도에 비유할 수 있다. 클래스가 미완성이라는 것은 멤버의 개수에 관계된 것이 아니라, 단지 미완성 메서드(Abstract method) 를 포함하고 있다는 의미이다. 
+
 - 미완성 설계도로 완성된 제품을 만들 수 없듯이, 추상클래스로 인스턴스는 생성할 수 없다. 추상클래스는 상속을 통해서 자손 클래스(subclass)에 의해서만 완성될 수 있다. 
+
 - 즉, 새로운 클래스를 작성하는 데 있어서 바탕이 되는 조상 클래스(super class) 인것.
+
 - 추상클래스 키워드 `abstrct` 를 붙이면 된다. 
 
 ```
@@ -199,6 +215,8 @@ abstract class 클래스 이름{
 ```
 
 - 추상클래스는 추상 메서드를 포함하고 있다는 것을 제외하고는 일반 클래스와 전혀 다르지 않다. 추상클래스에도 생성자가 있으며 멤버변수와 메서드도 가질 수 있다. 
+
+- [생활코딩 - 추상클래스를 사용하는 이유](https://edu.goorm.io/learn/lecture/41/%EB%B0%94%EB%A1%9C%EC%8B%A4%EC%8A%B5-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9-%EC%9E%90%EB%B0%94-java/lesson/734/%EC%B6%94%EC%83%81%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
 
 ### Abstract method 
 
@@ -223,11 +241,11 @@ abstract class Player{
 
 class AudioPlayer extends Player{
 	void play(int playbackPosition){
-		//구현해주어야 한다
+	//구현해주어야 한다
 	}
 	
 	void stop(){
-		//구현해 주어야 한다 
+	//구현해 주어야 한다 
 	}
 }
 ```
@@ -244,13 +262,14 @@ class AudioPlayer extends Player{
 
 public abstract class BaseActivity extends AppCompatActivity{
 		
-				@Override
-		    protected void onCreate(Bundle savedInstanceState) {
-	        super.onCreate(savedInstanceState);
-	        setContentView(myView());
-		    }
-				
-				public abstract void checkNetworkConnection(); 
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(myView());
+
+	    }
+
+	public abstract void checkNetworkConnection(); 
 }
 ```
 - MainActivity 가 AppCompatActivity를 상속받은 BaseActivity를 상속받도록 바꿔준다.
@@ -262,7 +281,9 @@ public class MainActivity extends BaseActivity{
 
 		@Override
 		public void checkNetworkConnection(){
-			//implement code to check network connection
+		
+		//implement code to check network connection
+		
 		};
 
 }
@@ -279,11 +300,14 @@ public class MainActivity extends BaseActivity{
 
 - 오직 추상메서드와 상수만을 멤버로 가질 수 있으며 기 외의 다른 요소는 허용하지 않는다. 
 
+- [참고 게시글 : 인터페이스 & 추상클래스](http://loustler.io/languages/oop_interface_and_abstract_class/)
+
 - 인터페이스 작성: 
 
 ```
 interface 인터페이스이름{
 	public static final 타입 상수이름 = 값; 
+	
 	public abstract 메서드 이름(매개변수); 
 }
 ```
@@ -306,8 +330,10 @@ interface 인터페이스이름{
 
 ```
 interface ClickEventHandler{
-     public void handleClick(); 
-     //callback 은 이 메소드로 처리해 줄 거야 - 약속만 
+     	
+	public void handleClick(); 
+     	
+	//callback 은 이 메소드로 처리해 줄 거야 - 약속만 
      }
 ```
 
@@ -315,9 +341,10 @@ interface ClickEventHandler{
 
 ```
 class ClickHandler implements ClickEventHandler{
- public void handleClick(){ 
- System.out.println("Clicked"); 
- //callback 을 받아서 구체적으로 이렇게 처리해 줄거야 - 실제 구현
+ 	public void handleClick(){ 
+		 System.out.println("Clicked"); 
+ 
+ 		//callback 을 받아서 구체적으로 이렇게 처리해 줄거야 - 실제 구현
 	  } 
   }
 ```
@@ -327,9 +354,13 @@ class ClickHandler implements ClickEventHandler{
 ```
 class Button{ 
 
-public void onClick(ClickEventHander clickEventHandler{     clickHandler.handleClick(); 
-	// 버튼 객체에서 onClick 함수를 호출하면 위에서 구현된 메소드가 작동한다. }
-	 }
+public void onClick(ClickEventHander clickEventHandler{     
+	
+	clickHandler.handleClick(); 
+	
+	// 버튼 객체에서 onClick 함수를 호출하면 위에서 구현된 메소드가 작동한다. 
+	} 
+}
 ```
     
 4.  Button 객체를 만들고 onClick 메소드를 호출하는데, 이 때 인자값으로 ClickEventHandler type 의 reference 를 넘겨준다.
@@ -343,8 +374,7 @@ public void onClick(ClickEventHander clickEventHandler{     clickHandler.handleC
     
      			button.onClick(clickHandler); 
     
-     		//android 에서는 아래와 같이 인터페이스를 구현하는 익명 클래스를 인자값으로 
-     			//넘겨주는 방식을 주로 취한다. 
+     		//android 에서는 아래와 같이 인터페이스를 구현하는 익명 클래스를 인자값으로 넘겨주는 방식을 주로 취한다. 
      			Button anonyButton = new Button(); 
      			anonyButton.onClick(new ClickEventHandler{
      					@Override
@@ -365,18 +395,22 @@ public void onClick(ClickEventHander clickEventHandler{     clickHandler.handleC
 
 ```
 //실제 List, ArrayList 를 라이브러리에서 확인해보자 
+
 public interface List<E> extends Collection<E> { // 구현 내용 생략 }
 //List 는 텅텅 비어있다. 다만 일련의 메서드의 구현을 강제할 뿐. 
 
 public class ArrayList<E> extends AbstractList<E>  
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable  
-{ // 구현 내용 생략 }
+	{ // 구현 내용 생략 }
+	
 //ArrayList 는 List 에서 구현을 강제받은 메서드들이 실질적으로 구현되어 있다. 
 ```
 
 - 쉽게 말하면  특정한 삽입, 삭제, 탐색 기능을 갖추고 있는 데이터들을 담는 특별한 바구니...정도로 표현할 수 있다. 
- - 바구니마다 어떤 기능에 특화되어 있는지 - 예를들어 A라는 바구니는 데이터를 넣고 빼는 것 보다 탐색이 더 쉬울 수 있다 - 하나씩 배워가는 것이 Collections Framework 을 공부하면서 해야 할 것들이다. 
- - 하지만 Collections Framework 을 이해하기 전에 반드시 위에서 배운 상속, 인터페이스에 대한 이해가 있어야 하고 이 위에 Generics(제네릭) 이라는 개념도 탑재해야 한다. 만약 이 중 이해가 부족한 것이 있다면 개념들을 메꾸어 나가면서 Collections Framework 를 이해해야 한다. 
+
+- 바구니마다 어떤 기능에 특화되어 있는지 - 예를들어 A라는 바구니는 데이터를 넣고 빼는 것 보다 탐색이 더 쉬울 수 있다 - 하나씩 배워가는 것이 Collections Framework 을 공부하면서 해야 할 것들이다. 
+
+- 하지만 Collections Framework 을 이해하기 전에 반드시 위에서 배운 상속, 인터페이스에 대한 이해가 있어야 하고 이 위에 Generics(제네릭) 이라는 개념도 탑재해야 한다. 만약 이 중 이해가 부족한 것이 있다면 개념들을 메꾸어 나가면서 Collections Framework 를 이해해야 한다. 
 
 ### Collections Framework's core interfaces 
 컬렉션 프레임웍에서는 데이터를 담는 구조에는 크게 3가지가 있다고 보고 이 구조들을 다루는 데 필요한 기능을 가진 3개의 인터페이스를 정의하였다. 그리고 인터페이스 List 와 Set 의 공통된 부분을 다시 뽑아서 새로운 인터페이스인 Collection을 추가로 정의하였다. 
@@ -388,6 +422,7 @@ List 와 Set 을 구현한 컬렉션 클래스들은 서로 많은 공통부분�
 
 * 각 인터페이스들의 특징 
 1. List : 순서가 있는 데이터의 집합. 데이터에 인덱스로 접근한다. 따라서 데이터의 중복을 허용한다. 
+- [Java Document - List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html)
 > List 인터페이스를 구현한 클래스들 :  ArrayList, LinkedList, Stack, Vector 등이 있다. 
 2. Set : 순서를 유지하지 않는 데이터의 집합. 데이터의 중복을 허용하지 않는다. '순서(인덱스)'라는 기준이 없으므로. 
 > Set 인터페이스를 구현한 클래스들 : HashSet, TreeSet 등 
@@ -397,11 +432,13 @@ List 와 Set 을 구현한 컬렉션 클래스들은 서로 많은 공통부분�
 ----
 
  **자세한 내용은 생활코딩을 참고하세요** 
-- [생활코딩 Java 강좌 - Generics]([https://www.opentutorials.org/course/1223/6237](https://www.opentutorials.org/course/1223/6237))
-- [생활코딩 Java 강좌 - Collections Framework]([https://www.opentutorials.org/course/1223/6446](https://www.opentutorials.org/course/1223/6446)) 
+- [생활코딩 Java 강좌 - Generics](https://www.opentutorials.org/course/1223/6237)
+- [생활코딩 Java 강좌 - Collections Framework](https://www.opentutorials.org/course/1223/6446)
 
 
 ### Android 에서 가장 많이 쓰게 될 ArrayList 
+
+- [Java Document - ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
 
 - 여러가지 자료 구조들을 공부하다 보면 많이 어렵다고 느낄 수 있는데, 사실 각 자료 구조들의 특성만 기억을 해 두고, 나중에 필요한 구조들에 대해서는 API문서를 찾아보는 식으로 ***사용*** 만 하면 된다. 
 
