@@ -1,6 +1,6 @@
 ﻿## Layouts
-안드로이드 에서는 xml 파일로 앱 디자인을 하도록 되어있습니다. 사진을 넣더라도 (만약 local 에서 넣는 경우 - 그러니까, 다른 주소에서 이미지를 불러오는 것(remote fetch)이 아니라 내 컴퓨터에 있는 `.png`, `.jpg` 파일 등을 넣는 경우) xml 파일들이 들어있는 `res` 폴더에서 자원을 관리하도록 되어있습니다.
-[사진1]
+- 안드로이드 에서는 xml 파일로 앱 디자인을 하도록 되어있습니다. 사진을 넣더라도 (만약 local 에서 넣는 경우 - 그러니까, 다른 주소에서 이미지를 불러오는 것(remote fetch)이 아니라 내 컴퓨터에 있는 `.png`, `.jpg` 파일 등을 넣는 경우) xml 파일들이 들어있는 `res` 폴더에서 자원을 관리하도록 되어있습니다.
+
 ![folder_structures](https://lh3.googleusercontent.com/JHh0wcb7kfEwP8Fgcys9DE96neoqnh_e0X_FUTA3_zG2r0OHkQByWADazZEM8A-ITL3CaKckFGtJ)
 
 - 위의 화면에 보이는 `res` 폴더가 모든 xml 파일들을 관리하는 폴더들을 포함하고 있습니다. 
@@ -14,11 +14,10 @@
 
 ![qualifiers](https://lh3.googleusercontent.com/2TNI9TVbfCHxL3q1Lqd8nz_jwPIzhhb0uLmNXKBErVoEyCUfFfZtHsNw3pTQ5zJSr_fZ0pHe1a-z)
 - 레이아웃을 만들 때 여러가지 qualifier 를 적용해 줄 수 있습니다. (지금은 qualifier 를 layout에 가해주는 어떠한 `조건` 정도로 이해합시다.)
- 
-[사진 2-2, 2-3] 
+- 예를들어 위의 화면에 보이는 `orientation` 을 선택하는 경우를 살펴봅시다. 
+
 ![portrait](https://lh3.googleusercontent.com/GOTAde6GolBi4ku-KLAGeHNQsdBNI8DqOGAzxfNBI8uTvtNkwLbAAL_tCj0xRllHWRqx_AnLbnUD)
 
-- 예를들어 위의 화면에 보이는 `orientation` 을 선택하는 경우를 살펴봅시다. 
 
 ![port](https://lh3.googleusercontent.com/tS1AffD51JUcsyg0-Qu0WrqPTOZDd_fyVpNnVZFfErEZeQXj96s0HfzDY10_QKz9G96OsHYpEckC)
 - qualifier 를 portrait 으로 설정하면 layout - port 라는 폴더가 생성되고, 위의 화면처럼 <layout 이름> (port) 라고 표시됩니다. 
