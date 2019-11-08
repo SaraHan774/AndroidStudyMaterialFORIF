@@ -1,6 +1,6 @@
 ﻿## Layouts
-안드로이드 에서는 xml 파일로 앱 디자인을 하도록 되어있습니다. 사진을 넣더라도 (만약 local 에서 넣는 경우 - 그러니까, 다른 주소에서 이미지를 불러오는 것(remote fetch)이 아니라 내 컴퓨터에 있는 `.png`, `.jpg` 파일 등을 넣는 경우) xml 파일들이 들어있는 `res` 폴더에서 자원을 관리하도록 되어있습니다.
-[사진1]
+- 안드로이드 에서는 xml 파일로 앱 디자인을 하도록 되어있습니다. 사진을 넣더라도 (만약 local 에서 넣는 경우 - 그러니까, 다른 주소에서 이미지를 불러오는 것(remote fetch)이 아니라 내 컴퓨터에 있는 `.png`, `.jpg` 파일 등을 넣는 경우) xml 파일들이 들어있는 `res` 폴더에서 자원을 관리하도록 되어있습니다.
+
 ![folder_structures](https://lh3.googleusercontent.com/JHh0wcb7kfEwP8Fgcys9DE96neoqnh_e0X_FUTA3_zG2r0OHkQByWADazZEM8A-ITL3CaKckFGtJ)
 
 - 위의 화면에 보이는 `res` 폴더가 모든 xml 파일들을 관리하는 폴더들을 포함하고 있습니다. 
@@ -14,20 +14,22 @@
 
 ![qualifiers](https://lh3.googleusercontent.com/2TNI9TVbfCHxL3q1Lqd8nz_jwPIzhhb0uLmNXKBErVoEyCUfFfZtHsNw3pTQ5zJSr_fZ0pHe1a-z)
 - 레이아웃을 만들 때 여러가지 qualifier 를 적용해 줄 수 있습니다. (지금은 qualifier 를 layout에 가해주는 어떠한 `조건` 정도로 이해합시다.)
- 
-[사진 2-2, 2-3] 
-![portrait](https://lh3.googleusercontent.com/GOTAde6GolBi4ku-KLAGeHNQsdBNI8DqOGAzxfNBI8uTvtNkwLbAAL_tCj0xRllHWRqx_AnLbnUD)
-
 - 예를들어 위의 화면에 보이는 `orientation` 을 선택하는 경우를 살펴봅시다. 
 
+![portrait](https://lh3.googleusercontent.com/GOTAde6GolBi4ku-KLAGeHNQsdBNI8DqOGAzxfNBI8uTvtNkwLbAAL_tCj0xRllHWRqx_AnLbnUD)
+
+
 ![port](https://lh3.googleusercontent.com/tS1AffD51JUcsyg0-Qu0WrqPTOZDd_fyVpNnVZFfErEZeQXj96s0HfzDY10_QKz9G96OsHYpEckC)
-- qualifier 를 portrait 으로 설정하면 layout - port 라는 폴더가 생성되고, 위의 화면처럼 <layout 이름> (port) 라고 표시됩니다. 
+- qualifier 를 portrait 으로 설정하면 layout - port 라는 폴더가 생성되고, 위의 화면처럼 <layout 이름> (port) 라고 표시됩니다.
+- 마찬가지로 qualifier 를 landscape 로 설정하면 port 대신 land 라는 것이 붙습니다. 
+> portrait mode : 세로 모드 , landscape mode : 가로 모드 
+
 - 어떤 경우에 주로 활용되냐면, 예를들어 테블릿에서는 활용할 수 있는 공간이 많기 때문에 화면을 가로로 돌렸을 때 이메일 화면의 경우 왼쪽에는 메일 리스트, 오른쪽에는 메일 내용을 표시해 주는 경우가 많습니다. 또 마찬가지로 다시 세로로 돌리면 (가로 모드일 때 보다 가용 면적에 적어져서) 메일 리스트만 뜨도록끔 하고 싶을 수 도 있겠죠? 
 - 이럴 때 만약 메일 화면 layout 이름을 mail_display.xml 이라고 정했다 합시다.  `mail_display (land)` 와 `mail_display (port)` 를 따로 만들어서 별도의 디자인을 만들어 주면 화면을 가로로 했을 때랑 세로로 했을 때 그에 알맞는 레이아웃이 나타나게 됩니다. 
 
 > 반드시 "동일한 이름의 파일 두 개"에 qualifier만 달리 해서 만들어 주어야 안드로이드 에서 이를 화면 디자인에 적용하는 데 문제가 생기지 않을 수 있습니다.  
 
-**Layout qualifier는 왜 쓰나요 ?**
+### Layout qualifier는 왜 쓰나요 ?
 **자바 코드를 줄여줍니다**. 안드로이드 개발에 있어서 앱 **내부 동작 코드**와 (예를들어 버튼 클릭시 어떤 효과가 나타나는가 등 과 같은 logic) **디자인 코드**를 분리해 주는 것이 매우 중요합니다. 만약 서버에서 이미지를 가져오는 코드와 이미지를 화면에 디스플레이 할 때 필요한 특정한 UI 요소들에 관련된 코드를 섞어두면 코드가 매우 더러워집니다. 따라서 최대한 UI관련된 요소는 Java 코드로 조작하기 보단 xml 파일로 따로 관리해 주는 것이 좋을 것입니다. 만약 위의 orientation qualifier 가 없었다면, Java 코드로 `현재 화면 orientation 을 불러와서 + 조건 체크를 해 준 후 + if portrait 이면 특정 레이아웃 불러오기, else if landscape 모드 이면 특정 레이아웃 불러오기`  와 같은 식으로 코드를 짜야 할 것입니다. ~~무엇보다 읽기 싫겠죠.~~
 
 ### 그러니까 도대체 Layout 디자인은 어떻게 합니까? 
@@ -46,7 +48,9 @@
 등등등 이 있습니다. 현재 안드로이드 개발에서는  Constraint Layout 을 사용하는 것을 권장하고 있으나, 여러 다른 기본 레이아웃을 익히고 나서 이해하는 것이 더 낫기 때문에 저는 사용하지 않겠습니다. 왜 Constraint layout을 사용하도록 하냐면 첫번째는 성능 문제이고 (다른 레이아웃보다 빌드시에 렌더링이 빠릅니다) 두번째는 화면 사이즈에 대한 걱정을 줄여주기 때문입니다. 
 우선 기본적인 레이아웃 들에 대한 샘플 코드를 한 번 보면서 이해해 봅시다. 
 
-### Linear Layout 
+--- 
+
+### Linear Layout 感 잡기
 수업시간에 무지개떡이란 이상한 비유로 설명을 했었는데, 지금도 별다른 표현이 떠오르지 않네요... 무지개떡입니다. 
 다만 가로로 늘어질 수 도 있고, 세로로 늘어질 수 도 있는 레이아웃 입니다. Linear Layout 안에 들어간 뷰들은 외롭게 한줄로만 줄을 서서 세로로 늘어지거나 가로로 늘어질 뿐입니다. 이런 규칙을 LinearLayout 이 강제해 준다고 생각하시면 됩니다. 
 
@@ -63,11 +67,11 @@
 두번째 태그인 `<LinearLayout ...> </LinearLayout>` 을 주목해 봅시다. 첫번째 / 가 없는 태그는 opening tag, 뒤의 /가 있는 태그는 closing tag 라고 합니다. **태그의 속성은 항상 opening tag 의 내부에 작성해 줍니다.** 
 > 두 개 태그로 열고 닫는 것이 힘들어 보이죠? 위의 LinearLayout 은 부모 레이아웃 이기 때문에 내부에 여러 child layout 을 포함해해서 위의 방법으로 태그를 닫아줍니다. 하지만 child layout 중에는 또 다른 child 를 갖지 않는 경우가 많습니다.  이런 경우에는 <TextView ...태그 속성 나열 ...  하고 바로 /> 를 써줌으로써 태그를 닫아주면 됩니다.  (하지만 나중에 레이아웃이 복잡해지면 child 의 child의 child 까지 만들 수 있겠죠?)
 
-- **도대체 저 속성이라는 것은 어디서 왔나요?**
+#### 도대체 저 속성이라는 것은 어디서 왔나요?
 `xmlns:android="http://schemas.android.com/apk/res/android" `
 이 코드에서 왔습니다. xmlns 는 xml namespace 를 뜻한다고 설명드렸습니다. `android` 라는 이름을 불러주면 이 안에 정의된 레이아웃 속성들을 가져다 사용할 수 있습니다. 
 
-- **속성의 종류** 
+#### 속성의 종류
 위 코드의 내부에 정의된 속성을 봅시다. 
 ```
 android:orientation="vertical" //가로로 늘어집니다. 
@@ -79,7 +83,7 @@ android:layout_height="match_parent"
 * Linear Layout 에서는 반드시 태그 안에 orientation 이 정의되어 있어야 합니다. 그래야 정확하게 child view 들에게 일정한 규칙을 강제할 수 있습니다. 여기서는 vertical 이 기본으로 설정되어 있습니다. 
 * layout_width 과 layout_height 는 모든 view 들이 공통적으로 가져야만 하는 속성입니다. 쓰지 않으면 빨간줄로 오류가 날 것입니다. 그래픽 유저 인터페이스를 구성하는 요소가 가로와 세로 길이가 없다면 사람 눈에는 1차원 - 점 과 같은 것으로 보일테니 소용이 없겠죠. (물론 height 가 0이면 직선으로 보이긴 합니다)
 
-- **가로 세로 길이가 숫자가 아니라 match_parent 혹은 wrap_content 로 나타나네요?** 
+#### 가로 세로 길이가 숫자가 아니라 match_parent 혹은 wrap_content 로 나타나네요?
 일일이 개발자가 숫자로 정의해주어야 했다면 아마 아무도 안드로이드 개발을 하지 않았을 것 같습니다. match_parent 는 부모 레이아웃의 사이즈에 맞추어 달라 라는 뜻이고 wrap_content 는 내부 view를 완전히 감싸도록 해달라는 뜻입니다. 
 
 ```
@@ -120,7 +124,7 @@ android:layout_height="match_parent"
 * 그리고 속성 background 는 배경색뿐만 아니라 배경 이미지 등을 지정해 주는 속성임을 기억해 주시길 바랍니다. 추후에 더 자세한 설명 드리겠습니다. 
 * 또한 이미 눈치 채셨겠지만 @color/ @drawable/ 과 같은 것은 해당 폴더 안에 있는 자원을 끌어오겠다는 뜻입니다. 사진 earth는 drawable 폴더 안에 있겠구나 생각해 주세요. 
 
-- **근데 숫자로 길이 지정하는거 귀찮고 힘들다면서 왜 위에는 100dp로 썼어요?** 
+#### 근데 숫자로 길이 지정하는거 귀찮고 힘들다면서 왜 위에는 100dp로 썼어요?
 > 그러게요?
 
 보통 길이를 지정해 줄 때 일회성으로 딱 이 특정한 뷰는 길이가 100dp이고 다른 뷰들에는 이 100dp 라는 것이 재사용 되지 않을 것 같다 싶으면 저렇게 숫자로 써주셔도 됩니다. 하지만 저런 dimension 에 대한 정보가 계속해서 늘어난다면, 그리고 특히 특정한 숫자가 반복되어서 사용된다면 내가 얼만큼의 길이로 뭘 지정했는지 헷갈릴 수 있겠죠? 
@@ -152,8 +156,9 @@ height 속성의 100dp라는 숫자 위에 커서를 올려두시고 alt + enter
 - 대충 감이 오시나요? width 에 대해서도 똑같이 100dp 라는 것을 빼 주시거나, 아니면 `@dimen/img_layout_w_h` 로 불러오는 식으로 지정해 주시면 됩니다. 일일이 모든 문법을 다 기억하실 필요 없고, 우선은 저렇게 자원을 따로 빼 준다는 사실을 기억하시길 바랍니다. 그러면 나중에 어떻게 빼야 하는지는 구글링하면 되니까요(?).
 > 코드를 일일이 외우지 말고 어떤 행동을 취해줘야 한다 정도의 느낌만 가지시길 바랍니다. 
 
+---
 
-### Relative Layout 
+### Relative Layout 感 잡기
 상대 레이아웃이라고도 합니다. 저는 개인적으로 프로그래밍 용어를 한국말로 일일이 번역하는것을 별로 좋아하지 않지만... 아무튼. 상대라는 말에서 유추할 수 있듯이 다른 View와 `상대적으로` 어떤 위치에 있도록 하고 싶다 할 때 사용하는 레이아웃 입니다. Linear Layout과 달리 View의 배치가 좀 더 자유로워 정말 ~~만만하게~~ 많이 사용되는 레이아웃 입니다.
 이 상대 레이아웃은 코드로 어떤식으로 나타나는지 확인해 봅시다. 
 
@@ -192,12 +197,14 @@ height 속성의 100dp라는 숫자 위에 커서를 올려두시고 alt + enter
 
 결과 화면입니다. Floating action button 이라는 것을 부모 레이아웃의 하단 좌측(layout_alignParentBottom 과 layout_alignParentEnd)에 붙여주었고, 버튼의 상하좌우로 18dp만큼 띄워주었습니다(layout_margin). 그리고 이미지는 무조건 버튼의 위에 있도록 (layout_above) 하였고 하단에만 32dp margin 을 주었습니다. 버튼과 마찬가지로 부모 레이아웃의 좌측에 붙도록 설정하였습니다. 
 
-- **좌측이라고 말하면서 왜 alignParentLeft 라고 안했나요?** 
+#### 좌측이라고 말하면서 왜 alignParentLeft 라고 안했나요?
 세상에는 다양한 사람들이 살고있습니다. 아랍어는 우측에서 좌측으로 글을 쓰는 것 처럼 세상의 좌 우 기준은 나라별로 차이가 있습니다. 따라서 안드로이드 에서도 이를 반영하고자 right, left 의 개념을 start, end 로 바꾸었습니다. 이렇게 했을 경우, Right - to - Left support 를 적용했을 때 (문자 등의 좌우가 바뀌어서 나타나야 하는 국가에 최적화되어 앱을 만드는 기능) 우리의 좌우와 이들의 좌우는 바뀌어서 나타납니다. **Left, Right 가 들어간 속성은 전부 다 Start, End 로 바꾼 버전도 존재하며 이를 사용하는 것을 권장합니다.**
 
 * [Blog post: Right-to-Left Support in android](https://android.jlelse.eu/rtl-support-on-android-here-is-all-you-need-know-e13f2df512e2)
 
 > 여러가지 다양한 레이아웃이 있는데 지금은 이정도 감만 익혀두도록 합시다.
+
+---
 
 ### 문자열 리소스 분리하기
 안드로이드에서 철저히 지켜야 하는 원칙은 **"사용자 눈에 보이는 문자열은 모두 별도의 string resource 파일에 분리해 놓아야 한다"** 입니다. 나중에 앱 번역을 할 때도 이렇게 따로 관리하면 편리합니다. 그리고 애초에 문자열을 hard coding 하는 것은 프로그램의 유지 보수를 힘들게 하므로 - 왜 dimens 파일에 숫자를 빼 두었는지 떠올리세요 - 권장하는 규칙을 지켜서 프로그램을 만듭시다.
