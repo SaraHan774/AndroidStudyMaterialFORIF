@@ -20,7 +20,10 @@
 
 
 ![port](https://lh3.googleusercontent.com/tS1AffD51JUcsyg0-Qu0WrqPTOZDd_fyVpNnVZFfErEZeQXj96s0HfzDY10_QKz9G96OsHYpEckC)
-- qualifier 를 portrait 으로 설정하면 layout - port 라는 폴더가 생성되고, 위의 화면처럼 <layout 이름> (port) 라고 표시됩니다. 
+- qualifier 를 portrait 으로 설정하면 layout - port 라는 폴더가 생성되고, 위의 화면처럼 <layout 이름> (port) 라고 표시됩니다.
+- 마찬가지로 qualifier 를 landscape 로 설정하면 port 대신 land 라는 것이 붙습니다. 
+> portrait mode : 세로 모드 , landscape mode : 가로 모드 
+
 - 어떤 경우에 주로 활용되냐면, 예를들어 테블릿에서는 활용할 수 있는 공간이 많기 때문에 화면을 가로로 돌렸을 때 이메일 화면의 경우 왼쪽에는 메일 리스트, 오른쪽에는 메일 내용을 표시해 주는 경우가 많습니다. 또 마찬가지로 다시 세로로 돌리면 (가로 모드일 때 보다 가용 면적에 적어져서) 메일 리스트만 뜨도록끔 하고 싶을 수 도 있겠죠? 
 - 이럴 때 만약 메일 화면 layout 이름을 mail_display.xml 이라고 정했다 합시다.  `mail_display (land)` 와 `mail_display (port)` 를 따로 만들어서 별도의 디자인을 만들어 주면 화면을 가로로 했을 때랑 세로로 했을 때 그에 알맞는 레이아웃이 나타나게 됩니다. 
 
