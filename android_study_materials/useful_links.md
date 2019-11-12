@@ -1,10 +1,11 @@
 - [하드웨어 에뮬레이터 설정](https://developer.android.com/studio/run/device)
 
-### 유료 Udacity Android Courses
+### 유료 Udacity Android Courses (전문가 코드 리뷰가 있어 가격이 비싸고 무조건 프로젝트를 완료해야 수료증 발급)
 - [Android Basics Nanodegree](https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803)
   - Price : 3 months / USD 799 
 - [Android Developer Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801)
   - Price : 6 months / USD 1599
+  - [제가 발급받은 수료증입니다](https://confirm.udacity.com/J54R3E7)
   
 ### CodingWithMitch
 - [Coding with mitch](https://codingwithmitch.com/) 
@@ -18,6 +19,8 @@
   - 이 사이트도 마찬가지로 최근 강의들은 Kotlin이고 Java로 된 것들은 좀 예전것들... 하지만 크게 상관 없음. 
  
 ### 무료 강좌들 
+- [Udacity android fundamentals](https://www.udacity.com/course/new-android-fundamentals--ud851)
+  - **무료 & 기초** 를 원하시는 분들에게 가장 추천 합니다. 
 - [edX 안드로이드 강좌](https://www.edx.org/course/introduction-to-mobile-application-development-using-android-0)
   - 개인적으로 edX의 엄청 큰 팬은 아니지만, 무료라는 장점이 있음. 
   - 좀 오래된 강의라 옛날 라이브러리부터 익히고 싶은 분들에게 적합할 듯 합니다. 
