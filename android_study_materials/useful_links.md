@@ -30,3 +30,9 @@
 - [Udacity android developer : 디자인 관련 설명](https://www.youtube.com/playlist?list=PLAwxTw4SYaPkdAyQ6F5dWmwxCee8TDpdo)
 - [Udacity android developer : Gradle 에 대한 자세한 설명](https://www.youtube.com/playlist?list=PLAwxTw4SYaPk2JP5TFPx7g63PCkyBqjZn)
 
+### Coursera
+- [android 관련 강좌들](https://www.coursera.org/search?query=android&)
+  - 수료증 발급은 유료, 청강은 무료 
+  - 참고로 저는 Coursera에서 안드로이드 강좌를 들어본 적이 없습니다. 
+  - [Kotlin 강좌](https://www.coursera.org/learn/kotlin-for-java-developers) 는 조금 들어봤는데 나름 괜찮다고 생각했습니다! 
+  
