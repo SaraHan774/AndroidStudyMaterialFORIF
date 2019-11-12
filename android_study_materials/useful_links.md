@@ -2,9 +2,9 @@
 
 ### 유료 Udacity Android Courses
 - [Android Basics Nanodegree](https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803)
-  - Price : 3 months / USD799 
+  - Price : 3 months / USD 799 
 - [Android Developer Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801)
-  - Price : 6 months / USD $1599
+  - Price : 6 months / USD 1599
   
 ### CodingWithMitch
 - [Coding with mitch](https://codingwithmitch.com/) 
