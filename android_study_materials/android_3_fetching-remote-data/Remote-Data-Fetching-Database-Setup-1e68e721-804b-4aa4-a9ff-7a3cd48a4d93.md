@@ -955,7 +955,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 ### 5. ViewModel 클래스 만들기
 
-- [**gradle.build](http://gradle.build) 파일의 dependencies 밑에 아래의 lifecycle extension 을 추가해 줍니다. ViewModel 을 사용하기 위해 필요한 디펜던시입니다.**
+- `build.gradle(Module:app)` 파일의 dependencies 밑에 아래의 lifecycle extension 을 추가해 줍니다. ViewModel 을 사용하기 위해 필요한 디펜던시입니다.**
 
 ```
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
