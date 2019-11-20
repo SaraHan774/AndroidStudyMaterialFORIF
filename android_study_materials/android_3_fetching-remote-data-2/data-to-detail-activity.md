@@ -7,11 +7,14 @@
 - **Click 할 TextView 초기화 해주기**
 - ViewHolder 클래스의 생성자에 클릭을 위한 TextView 찾아주기
 
+```
     //TODO 35 : Detail 화면으로 넘어갈 때 클릭할 TextView 를 찾아줍니다.
           tvClick = itemView.findViewById(R.id.tv_main_click_me);
+```
 
 - `**onBindViewHolder` 수정하기**
 
+```
     @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             //여기서 뷰홀더에 position 별로 데이터 뿌려줌
@@ -52,9 +55,11 @@
                 }
             });
         }
+```
 
 ### DetailActivity 코드 수정하기
 
+```
     package com.gahee.myapplication;
     
     import androidx.appcompat.app.AppCompatActivity;
@@ -111,9 +116,11 @@
     
         }
     }
+```
 
 ### activity_detail.xml 레이아웃 파일 최종
 
+```
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -200,6 +207,7 @@
         </RelativeLayout>
     
     </LinearLayout>
+```
 
 ### 결과
 
