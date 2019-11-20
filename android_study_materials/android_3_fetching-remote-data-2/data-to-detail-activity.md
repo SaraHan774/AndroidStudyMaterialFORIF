@@ -12,7 +12,7 @@
           tvClick = itemView.findViewById(R.id.tv_main_click_me);
 ```
 
-- `**onBindViewHolder` 수정하기**
+- `onBindViewHolder` 수정하기
 
 ```
     @Override
