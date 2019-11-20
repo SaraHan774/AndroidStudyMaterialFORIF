@@ -240,11 +240,13 @@
 
 ### Config.class
 
+```
     package com.gahee.myapplication.utils;
     
     public class Config {
         public static final String API_KEY = "2c702e667781c19eb48ec3b2193c97c8"; 
     }
+```
 
 → Config 클래스 파일 밑에 위처럼 API_KEY를 저장해 둡니다. 
 
@@ -252,11 +254,13 @@
 
 - Constants 클래스 파일 밑에는
 
+```
     package com.gahee.myapplication.utils;
     
     public class Constants {
         public static final String BASE_URL = "https://api.themoviedb.org/3/";   
     }
+```
 
 → 이렇게 BASE_URL 스트링을 만들어 줍니다. **이 base url 에서 여러 쿼리를 추가해서 정보를 요청할 수 있게 됩니다.** 
 
@@ -295,6 +299,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 ### model 패키지 아래 MovieResponse 라는 POJO파일을 아래와 같이 작성합시다.
 
+```
     package com.gahee.myapplication.model;
     import java.util.List;
     
@@ -311,12 +316,14 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
                 return results;
             }
     }
+```
 
 - 이렇게 변수, 생성자, getter (혹은 setter까지) 있는 자바 클래스를 많이 디자인 해 보셨을 겁니다. 이런 흔히 많이 본 Java 클래스를 POJO 라고 합니다.
 - MovieResponse 에서는 results 라는 리스트를 받아올 것이므로, 위의 JSON 파일의 results를 자바 객체로변환할 때 우리가 만든 MovieResponse 라는 클래스 파일을 사용해서 변환해야 함을 알려주어야 합니다.
 
 ### Implement Parcelable (JSON에서 Java 객체로의 변환을 위해) & SerializedName annotation 추가하기
 
+```
     package com.gahee.myapplication.model;
     
     import android.os.Parcel;
@@ -369,6 +376,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
     
     
     }
+```
 
 **→ 코드에 대한 자세한 설명은 아래의 Movie 클래스에 대한 설명과 겹치므로, 아래에서 설명드리겠습니다.** 
 
@@ -376,6 +384,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 → results 중에서 첫번째 요소를 펼쳐보면 poster_path, 영화 id, title, vote_average, overview, release_date 와 같은 정보들이 있습니다. 이 중에서 우리는 
 
+```
     results[20] 리스트 요소 20개를 다 불러오는데, 각각에서 
     
     - poster_path
@@ -386,9 +395,11 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
     - release_date 
     
     => 이렇게 여섯개의 항목들을 가져올 것입니다. 
+```
 
 **→ 그렇다면 우리가 정의할 Movie 클래스 파일은 아래와 같이 구성이 됩니다. (POJO)**
 
+```
     package com.gahee.myapplication.model;
     
     public class Movie {
@@ -427,6 +438,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
             return releaseDate;
         }
     }
+```
 
 ### 5. Movie / MovieResponse 객체를 Retrofit 이 알아보도록 만들어 주기
 
@@ -447,6 +459,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - 완성된 Movie class 파일입니다.
 
+```
     package com.gahee.myapplication.model;
     
     import android.os.Parcel;
@@ -534,6 +547,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
             return releaseDate;
         }
     }
+```
 
 ---
 
@@ -555,6 +569,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - 위의 인터페이스 안에 GET 요청을 날릴 수 있는 메소드를 정의하겠습니다.
 
+```
     package com.gahee.myapplication.data;
     
     import com.gahee.myapplication.model.MovieResponse;
@@ -572,6 +587,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
         Call<MovieResponse> getPopularMovies(@Query("api_key") String api_key, Map<String, String> queries);
     
     }
+```
 
 - 하나 하나 살펴보면
 - `@GET("movie/popular")` : GET 요청을 날릴건데, base url 에다가 movie/popular 이라는 것을 붙여서 해당 주소에 접근하겠다는 뜻입니다.
@@ -598,6 +614,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 아래와 같이 코드를 작성해 줍시다. 
 
+```
     package com.gahee.myapplication.data;
     
     import com.gahee.myapplication.utils.Constants;
@@ -623,6 +640,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
         }
         
     }
+```
 
 ### (1) : Retrofit 객체를 Builder pattern 으로 만들어 주었습니다.
 
@@ -649,6 +667,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 - **우선 utils 패키지 밑에 있는 Constants 클래스로 들어가 주시길 바랍니다.**
     - queries 라고 써 놓은 곳 밑의 스트링들을 붙여넣기 해 주세요.
 
+```
     package com.gahee.myapplication.utils;
     
     public class Constants {
@@ -662,9 +681,11 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
         public static final String PAGE = "1";
     
     }
+```
 
 - **이제, `MovieClient` 클래스에 들어가서 아래의 코드를 넣어주세요**
 
+```
     package com.gahee.myapplication.data;
     
     import android.util.Log;
@@ -769,12 +790,15 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
         }
     
     }
+```
 
 - Client 는 정보를 받아오는 일을 담당하는 클래스 입니다. 따라서 **받아온 정보를 저장할 객체**가 하나 필요하고, 정보를 받아왔을 때 **성공했는지 실패했는지도** 알려주어야 합니다.
 - 1) 받아온 정보를 저장할 객체 **MutableLiveData<MovieResponse> 타입**
 
+```
       private MutableLiveData<MovieResponse> listMutableLiveData
             = new MutableLiveData<>();
+```
 
 → Mutable 이라는 것은 변할 수 있다는 뜻이고 LiveData 는 데이터의 변화를 observe 할 수 있는 종류의 데이터 라는 뜻입니다. 따라서 MovieResponse 라는 클래스에 JSON에서 받아온 "results" 아래의 리스트 요소들이 변하는 것을 관찰하고, 그에 맞에 UI를 업데이트 할 수 있습니다. 
 
@@ -782,6 +806,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - 2) 정보를 받아왔을 때 성공 or 실패
 
+```
     final Call<MovieResponse> popularMoviesCall
             = movieService.getPopularMovies(Config.API_KEY, queries);
     
@@ -801,6 +826,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
     };
     popularMoviesCall.enqueue(popularMoviesCallback);
     }
+```
 
 → MovieServie 인터페이스 안에 정의해놓은 getPopularMovies 의 응답으로 반환받는 것은 Call이라는 객체 안에 있는 MovieResponse 입니다. 
 
@@ -808,16 +834,19 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - Callback의 onResponse 함수를 보면 인자값으로 response 를 받습니다. 이 응답 안에 우리가 원하는 정보인 MovieResponse 가 담겨있으며, 이는 즉 List<Movie> 를 반환해 준 것과 동일합니다.
 
+```
         @Override
         public void onResponse(Call<MovieResponse> call, Response<MovieResponse> response) {
             listMutableLiveData.setValue(response.body());
     
         }
+```
 
 → 결과를 담을 MutableLiveData 에다가 setValue 함수를 호출해서 response 의 body()를 저장해 줍니다.
 
 - API 사용을 위한 Service 객체
 
+```
      private HashMap<String, String> queries = new HashMap<>();
     
     // 중간 생략 
@@ -832,6 +861,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
             queries.put(KEY_PAGE, PAGE);
             return queries;
     }
+```
 
 → service 에서 정의해놓은 API를 사용하기 위해 getMovieService()로 호출을 해서 객체를 생성한 후, API를 사용합니다. 
 
@@ -849,6 +879,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - data 패키지 밑에 **RemoteRepo 라는 클래스 파일을 작성해서 아래의 코드를 넣습니다.**
 
+```
     package com.gahee.myapplication.data;
     
     import android.os.AsyncTask;
@@ -910,6 +941,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
         }
     
     }
+ ```
 
 - 코드를 부분별로 나눠서 살펴보면 아래와 같습니다.
 
@@ -923,9 +955,11 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 ### 5. ViewModel 클래스 만들기
 
-- [**gradle.build](http://gradle.build) 파일의 dependencies 밑에 아래의 lifecycle extension 을 추가해 줍니다. ViewModel 을 사용하기 위해 필요한 디펜던시입니다.**
+- `build.gradle(Module:app)` 파일의 dependencies 밑에 아래의 lifecycle extension 을 추가해 줍니다. ViewModel 을 사용하기 위해 필요한 디펜던시입니다.**
 
+```
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+```
 
 - data 패키지 아래에 RemoteViewModel 이라는 클래스를 작성해 줍니다.
 - **RemoteViewModel 클래스는 ViewModel 클래스를 상속받습니다.**
@@ -934,6 +968,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - 클래스를 작성한 후 아래의 코드를 넣어주세요
 
+```
     package com.gahee.myapplication.data;
     
     import androidx.lifecycle.MutableLiveData;
@@ -971,6 +1006,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
     
     
     }
+```
 
 - 아래의 도표를 다시 상기해 주세요.
 
@@ -989,6 +1025,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 - onCreate() 메소드 안에서 ViewModel 객체를 초기화 해준 후, ViewModel 레이어의 fetchData 메소드를 (여기서는 `fetchPopularMoviesRemote()`) 호출하여 밑의 레이어까지 연쇄적으로 fetch 호출이 일어나도록 해줍니다.
 - 그리고 마지막으로 LiveData 에 observe() 메소드를 걸어서 MovieResponse 객체를 Log 에 출력합니다.
 
+```
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -1034,6 +1071,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
                 }
             });
         }
+  ```
 
 - shift + F10 을 해주시면 (에뮬레이터가 설치가 되어있는 경우) 아래와 같이 Logcat 칸에 정보가 찍히는 것을 확인할 수 있습니다.
 - 혹은 탭 우측 상단의 Run 버튼을 눌러주세요 (초록색 삼각형 버튼)
@@ -1052,6 +1090,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - 그리고 RecyclerView 를 셋팅했던 코드를 아래와 같이 onChanged 메소드 안에 넣어줍니다.
 
+```
     @Override
       protected void onCreate(Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
@@ -1077,6 +1116,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
               }
           });
       }
+```
 
 - Context 를 넣는 부분에 MainActivity.this 라고 한 것은, 현재 new Observer <MovieResponse>(){  } 안에서 this 를 할 경우 this가 Observer 인터페이스를 가리키게 되기 때문에 명확하게 MainActivity가 내가 원하는 this 이다를 표시하기 위해 적어준 것입니다.
 
@@ -1085,6 +1125,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
     - 생성자의 매개변수도 이에 맞게 바꾸고
     - getItemCount () 함수 안의 return 값도 movies.size() 로 바꿔주어야 합니다.
 
+```
     package com.gahee.myapplication;
     
     import android.content.Context;
@@ -1142,9 +1183,11 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
             }
         }
     }
+```
 
 - `**rv_main_view_holder` 의 레이아웃을 아래와 같이 수정해 줍니다.**
 
+```
     <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
@@ -1217,13 +1260,17 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
     
     
     </LinearLayout>
+```
 
 - strings.xml에다가 아래의 스트링을 추가해 주세요
 
+```
     <string name="click_me">Click for Details</string>
+```
 
 - 그리고 다시 Adapter 클래스로 돌아와 위의 View 들을 코드로 연결시켜 줍니다. 우선 **onBindViewHolder 에서 이미지뷰를 제외하고 나머지 텍스트뷰에 영화 정보를 띄워줍니다.**
 
+```
     package com.gahee.myapplication;
     
     import android.content.Context;
@@ -1302,6 +1349,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
             }
         }
     }
+```
 
 - 이렇게 하고 나서 run 을 누르면 (shift + F10) 아래와 같이 리스트에 정보가 업데이트 되었습니다.
 
@@ -1317,8 +1365,10 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 ![](Untitled-1a393479-ea0c-43b5-92a5-c19ed0dd8a8d.png)
 
-    https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
-    
+```
+ https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
+``` 
+
     -> 이런 주소가 있다고 했을 때 저희가 JSON의 poster path 로 받은 값은 가장 뒤의 
     kqjL17yufvn9OVLyXYpvtyrFfak.jpg 문자열 입니다. 
     
@@ -1334,20 +1384,23 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 
 - 우선 build.gradle 파일에 Glide 디펜던시를 아래와 같이 추가해 줍니다.
 
-- 1)  build.gradle (Project : ... ) 인 파일에 들어가서 repositories 괄호 안에다가 mavenCentral()과 google() 을 추가해 주세요
+- 1)  build.gradle (Project : ... ) 인 파일에 들어가서 repositories 괄호 안에다가 `mavenCentral()`과 `google()` 을 추가해 주세요
 
 ![](Untitled-bc5bc659-3e4a-4ff9-9d0b-fc18cb3d303b.png)
 
 - 2) build.grade(Module : app) 에다가 아래의 디펜던시를 추가해 주세요
 
+```
     //Glide
       implementation 'com.github.bumptech.glide:glide:4.10.0'
       annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+```
 
 ![](Untitled-e56493fb-e082-4905-b1e1-072d3a630254.png)
 
 - **POSTER_BASE_URL 은 Constants 클래스 안에 정의되어야 합니다.**
 
+```
     public class Constants {
     
         //TODO 2 : 쿼리에 필요한 상수들을 정의합니다.
@@ -1364,10 +1417,12 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
         public static final String PAGE = "1";
     
     }
+```
 
 - Adapter 클래스에 다시 들어갑니다.
 - **onBindViewHolder 메소드 안에다가 아래와 같이 Glide 를 사용해서 이미지를 띄워주세요.**
 
+```
     @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             //여기서 뷰홀더에 position 별로 데이터 뿌려줌
@@ -1386,6 +1441,7 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
                     .load(POSTER_BASE_URL + movie.getPosterPath())
                     .into(holder.imgMoviePoster);
         }
+```
 
 → 이렇게까지 하고 나면 다음과 같은 결과가 나옵니다. 
 
