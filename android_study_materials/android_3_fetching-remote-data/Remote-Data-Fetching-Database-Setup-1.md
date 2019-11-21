@@ -1157,9 +1157,9 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
 - Context 를 넣는 부분에 MainActivity.this 라고 한 것은, 현재 new Observer <MovieResponse>(){  } 안에서 this 를 할 경우 this가 Observer 인터페이스를 가리키게 되기 때문에 명확하게 MainActivity가 내가 원하는 this 이다를 표시하기 위해 적어준 것입니다.
 
 - **또한 MyRecyclerViewAdapter  클래스를 아래와 같이 수정해 주어야 합니다.**
-    - ArrayList <String> 대신에 ArrayList <Movie> 를 받도록 바꾸고
+    - `ArrayList<String>` 대신에 `ArrayList<Movie>` 를 받도록 바꾸고
     - 생성자의 매개변수도 이에 맞게 바꾸고
-    - getItemCount () 함수 안의 return 값도 movies.size() 로 바꿔주어야 합니다.
+    - `getItemCount()` 함수 안의 return 값도 `movies.size()` 로 바꿔주어야 합니다.
 
 ```
     package com.gahee.myapplication;
