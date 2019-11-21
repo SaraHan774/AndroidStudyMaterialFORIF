@@ -1072,6 +1072,42 @@ utils 패키지를 만들었던 것과 동일한 방법으로 model 패키지를
             });
         }
   ```
+ 
+ ### 데이터 출력 전 app 폴더 밑의 -> manifests 폴터 -> AndroidManifest.xml 파일 수정 
+ 
+ * 아래의 permission 을 추가해 줍니다. 
+ ```
+  <uses-permission android:name="android.permission.INTERNET"/>
+ ```
+ 
+ * 추가한 후의 manifest 파일 
+ ```
+ <?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gahee.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+ ```
+ 
 
 - shift + F10 을 해주시면 (에뮬레이터가 설치가 되어있는 경우) 아래와 같이 Logcat 칸에 정보가 찍히는 것을 확인할 수 있습니다.
 - 혹은 탭 우측 상단의 Run 버튼을 눌러주세요 (초록색 삼각형 버튼)
