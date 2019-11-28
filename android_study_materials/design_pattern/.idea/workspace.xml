@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79f2253b-8f89-4469-8c8f-119a4f546b03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/observer_lecture/ISubject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/observer_lecture/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/observer_lecture/ObserverPatternEx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/observer_lecture/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/singleton_lecture/MakeACaptain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/singleton_lecture/SingletonPatternEx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/random_strings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/sample_key_values3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/dbms/SecondChanceAlg.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/dbms/TestSetGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/model/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample1001/CaptionTelevision.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample1001/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample1001/Movie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample1001/MovieArrayList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample1001/Television.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample_2/AudioPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample_2/CaptionTelevision.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample_2/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample_2/Movie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample_2/MovieArrayList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample_2/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/sample_2/Television.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../20190924/src/utils/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/design_pattern/observer/Observer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/design_pattern/observer/Observer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer2/Observer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer2/Observer1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer2/Observer2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer2/Observer2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer2/ObserverPatternEx2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer2/ObserverPatternEx2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/observer2/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/observer2/Subject.java" afterDir="false" />
-    </list>
+    <list default="true" id="79f2253b-8f89-4469-8c8f-119a4f546b03" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,24 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/observer_lecture/Observer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="4" selection-start-line="4" selection-end-line="6" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/observer_lecture/ObserverPatternEx.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/observer_lecture/Subject.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -128,11 +77,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/observer2/ObserverPatternEx2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/concepts/singleton.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/concepts/observer.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -177,6 +144,12 @@
       </list>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1180" />
     <option name="width" value="2675" />
@@ -206,18 +179,6 @@
               <item name="design_pattern" type="b2602c69:ProjectViewProjectNode" />
               <item name="design_pattern" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="design_pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design_pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="observer2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="design_pattern" type="b2602c69:ProjectViewProjectNode" />
-              <item name="design_pattern" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="observer_lecture" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -336,6 +297,14 @@
       <updated>1574755992517</updated>
       <workItem from="1574765937945" duration="17000" />
     </task>
+    <task id="LOCAL-00001" summary="add java design pattern">
+      <created>1574771669339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574771669339</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -349,7 +318,7 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32931727" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="3" />
@@ -361,11 +330,11 @@
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info anchor="right" id="Maven" order="2" />
+      <window_info anchor="right" id="Maven" order="2" weight="0.3293092" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.24949698" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Run" order="8" side_tool="true" weight="0.34406438" />
     </layout>
@@ -405,14 +374,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add java design pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="add java design pattern" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/concepts/singleton.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/singleton/MakeACaptain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -431,13 +401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/concepts/observer.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -545,7 +508,21 @@
     <entry file="file://$PROJECT_DIR$/src/observer2/ObserverPatternEx2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concepts/singleton.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/concepts/observer.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
