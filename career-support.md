@@ -18,3 +18,10 @@
 * [Udacity Resume 작성 강좌](https://www.udacity.com/course/refresh-your-resume--ud243)
 * [Naver edwith 유학과 취업을 위한 문서 작성법](https://www.edwith.org/profile-new/joinLectures/22254)
 * [Udacity Version Control with Git](https://www.udacity.com/course/version-control-with-git--ud123)
+
+
+---
+
+### 안드로이드 개발자 로드맵 
+- [Naver TECH CONCERT MOBILE 2019](https://tv.naver.com/v/9329737)
+- 영상 하단에 발표 자료 링크가 있습니다. 
